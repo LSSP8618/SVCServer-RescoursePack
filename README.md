@@ -28,10 +28,9 @@ flowchart LR
 
 ### 全局
 - [ ] 全景图更新
-- [ ] 恢复加载游戏的工作室徽标
 
 ### Dungeons独有
-- [ ] HUD实现Dungeons风格
+- [X] HUD实现Dungeons风格
 - [ ] 方块材质覆盖Dungeons样式
 
 
