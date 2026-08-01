@@ -1,0 +1,55 @@
+name: 自动打包资源包
+
+on:
+  push:
+    branches: [ main, Dungeons-Ver ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. 获取当前分支名
+      - name: 获取分支名
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+
+      # 2. 根据分支名设置不同的打包文件名前缀
+      - name: 设置文件名前缀
+        run: |
+          if [ "${{ env.BRANCH_NAME }}" = "main" ]; then
+            echo "PACK_PREFIX=SVC ServerPack" >> $GITHUB_ENV
+          elif [ "${{ env.BRANCH_NAME }}" = "Dungeons-Ver" ]; then
+            echo "PACK_PREFIX=SVC Dungeons" >> $GITHUB_ENV
+          else
+            echo "PACK_PREFIX=${{ env.BRANCH_NAME }}" >> $GITHUB_ENV
+          fi
+
+      # 3. 生成当前日期（月.日 格式，如 08.01）
+      - name: 生成日期标签
+        run: echo "DATE_TAG=$(date +'%m.%d')" >> $GITHUB_ENV
+
+      # 4. 打包成 ZIP，然后立即解压到专用文件夹
+      - name: 打包并准备发布内容
+        run: |
+          # 生成压缩包文件名
+          FINAL_NAME="${{ env.PACK_PREFIX }}-${{ env.DATE_TAG }}.zip"
+          echo "正在打包为: $FINAL_NAME"
+          
+          # 排除 .git、.github 和所有 .zip 文件（防止把旧的包打进去）
+          zip -r "$FINAL_NAME" . -x "*.git*" -x ".github/*" -x "*.zip"
+          
+          # 创建发布目录，并将压缩包内容解压进去
+          mkdir release_contents
+          unzip "$FINAL_NAME" -d release_contents
+          
+          # 删除临时压缩包（保持工作目录干净）
+          rm "$FINAL_NAME"
+
+      # 5. 上传工件（关键改动：上传文件夹，而不是 .zip 文件）
+      - name: 上传工件
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PACK_PREFIX }}-${{ env.DATE_TAG }}
+          path: release_contents/
