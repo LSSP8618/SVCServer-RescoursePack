@@ -1,0 +1,50 @@
+name: 自动打包资源包
+
+on:
+  push:
+    branches: [ main, Dungeons-Ver ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. 获取当前分支名（用于后续判断）
+      - name: 获取分支名
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+
+      # 2. 根据分支名设置不同的打包文件名前缀
+      - name: 设置文件名前缀
+        run: |
+          if [ "${{ env.BRANCH_NAME }}" = "main" ]; then
+            echo "PACK_PREFIX=SVC ServerPack" >> $GITHUB_ENV
+          elif [ "${{ env.BRANCH_NAME }}" = "Dungeons-Ver" ]; then
+            echo "PACK_PREFIX=SVC Dungeons" >> $GITHUB_ENV
+          else
+            # 如果将来加了其他分支，默认用分支名本身
+            echo "PACK_PREFIX=${{ env.BRANCH_NAME }}" >> $GITHUB_ENV
+          fi
+
+      # 3. 生成当前日期（月.日 格式，比如 8.1）
+      - name: 生成日期标签
+        run: echo "DATE_TAG=$(date +'%m.%d')" >> $GITHUB_ENV
+
+      # 4. 执行打包（使用动态生成的文件名）
+      - name: 打包为 ZIP
+        run: |
+          # 组合最终文件名：前缀 + 日期标签 + .zip
+          FINAL_NAME="${{ env.PACK_PREFIX }}-${{ env.DATE_TAG }}.zip"
+          echo "正在打包为: $FINAL_NAME"
+          zip -r "$FINAL_NAME" . \
+            -x "*.git*" \
+            -x ".github/*" \
+            -x "*.zip"
+
+      # 5. 上传工件（Artifacts 名称也同步保持一致）
+      - name: 上传工件
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PACK_PREFIX }}-${{ env.DATE_TAG }}
+          path: ${{ env.PACK_PREFIX }}-${{ env.DATE_TAG }}.zip
