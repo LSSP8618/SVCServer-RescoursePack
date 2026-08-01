@@ -1,0 +1,55 @@
+{
+	"credit": "Made by Vaguely Interesting Fella",
+	"textures": {
+		"0": "item/snowball",
+		"particle": "item/snowball"
+	},
+	"elements": [
+		{
+			"from": [6.5, 0, 6.5],
+			"to": [9.5, 3, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.5, 1.5, 8.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "rotation": 180, "texture": "#0"},
+				"east": {"uv": [0, 3, 3, 6], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [3, 0, 6, 3], "rotation": 180, "texture": "#0"},
+				"west": {"uv": [3, 3, 6, 6], "rotation": 180, "texture": "#0"},
+				"up": {"uv": [3, 9, 0, 6], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [9, 0, 6, 3], "rotation": 180, "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 8, 0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 8, 0]
+		},
+		"firstperson_righthand": {
+			"rotation": [17, 0, 0],
+			"translation": [6.25, 13, 0],
+			"scale": [2.07, 2.07, 2.07]
+		},
+		"firstperson_lefthand": {
+			"rotation": [17, 0, 0],
+			"translation": [6.25, 13, 0],
+			"scale": [2.07, 2.07, 2.07]
+		},
+		"ground": {
+			"translation": [0, 4.5, 0]
+		},
+		"gui": {
+			"rotation": [38, -44, 0],
+			"translation": [0, 5, -1.75]
+		},
+		"head": {
+			"translation": [0, 14.25, 0]
+		},
+		"fixed": {
+			"rotation": [40, 41, 12],
+			"translation": [-2.25, 7.75, 5.75],
+			"scale": [1.67, 1.67, 1.67]
+		}
+	}
+}
