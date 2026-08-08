@@ -1,9 +1,7 @@
 {
     "pack": {
         "description": "§aS§r§eV§r§bC§r服务器标配资源包 By§d§oAllayJumpStudio§r§r",
-        "pack_format": 55,
-        "supported_formats": [34, 64],
-        "min_format": 34,
-        "max_format": [69, 0]
+        "min_format": 75,
+        "max_format": 999
     }
 }
