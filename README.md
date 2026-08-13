@@ -27,7 +27,7 @@ flowchart LR
 ## 任务清单
 
 ### 全局
-- [ ] 全景图更新
+- [X] 全景图更新
 
 ### Dungeons独有
 - [X] HUD实现Dungeons风格
