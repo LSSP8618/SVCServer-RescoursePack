@@ -1,0 +1,89 @@
+{
+  "models": [
+    {
+      "invertAxis": "xy",
+      "part": "knob",
+      "id": "knob",
+      "attach": false,
+      "translate": [
+        0.0,
+        -15.0,
+        -1.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "coordinates": [
+            -1.0,
+            13.0,
+            15.0,
+            1.0,
+            4.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "invertAxis": "xy",
+      "part": "lid",
+      "id": "lid",
+      "attach": false,
+      "translate": [
+        0.0,
+        -15.0,
+        -1.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "coordinates": [
+            -15.0,
+            10.0,
+            1.0,
+            15.0,
+            5.0,
+            14.0
+          ]
+        }
+      ]
+    },
+    {
+      "invertAxis": "xy",
+      "part": "base",
+      "id": "base",
+      "attach": false,
+      "translate": [
+        0.0,
+        -24.0,
+        0.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            19
+          ],
+          "coordinates": [
+            -15.0,
+            14.0,
+            1.0,
+            15.0,
+            10.0,
+            14.0
+          ]
+        }
+      ]
+    }
+  ],
+  "textureSize": [
+    64,
+    64
+  ]
+}

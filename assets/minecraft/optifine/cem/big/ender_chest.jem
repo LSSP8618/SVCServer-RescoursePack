@@ -1,0 +1,142 @@
+{
+	"credit": "Made with Blockbench",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "base",
+			"id": "base",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"submodels": [
+				{
+					"id": "Model",
+					"invertAxis": "xy",
+					"translate": [-8, 24, 9],
+					"rotate": [-180, 0.1, 0.1],
+					"boxes": [
+						{
+							"coordinates": [-10, 0, -6, 20, 10, 14],
+							"uvNorth": [14, 33, 34, 43],
+							"uvEast": [0, 33, 14, 43],
+							"uvSouth": [40, 23, 60, 33],
+							"uvWest": [34, 33, 48, 43],
+							"uvUp": [20, 33, 0, 19],
+							"uvDown": [40, 19, 20, 33]
+						},
+						{
+							"coordinates": [8, 1, -4, -16, 9, 10],
+							"uvNorth": [26, 43, 42, 53],
+							"uvEast": [16, 43, 26, 53],
+							"uvSouth": [0, 43, 16, 53],
+							"uvWest": [42, 43, 52, 53],
+							"uvUp": [2, 31, 18, 21],
+							"uvDown": [41.5, 19, 43, 20.5]
+						}
+					],
+					"submodels": [
+						{
+							"id": "LidModel",
+							"invertAxis": "xy",
+							"translate": [10, 10, 8],
+							"boxes": [
+								{
+									"coordinates": [-20, 0, -14, 20, 5, 14],
+									"uvNorth": [14, 14, 34, 19],
+									"uvEast": [0, 14, 14, 19],
+									"uvSouth": [43, 53, 63, 58],
+									"uvWest": [34, 14, 48, 19],
+									"uvUp": [14, 0, 34, 14],
+									"uvDown": [34, 0, 54, 14]
+								},
+								{
+									"coordinates": [-2, 0, -12, -16, 5, 10],
+									"uvNorth": [34, 58, 14, 53],
+									"uvEast": [0, 58, 14, 53],
+									"uvSouth": [34, 58, 14, 53],
+									"uvWest": [0, 58, 14, 53],
+									"uvUp": [52, 12, 36, 2],
+									"uvDown": [36, 2, 52, 12]
+								},
+								{
+									"coordinates": [-18, 1, -12, 16, 3, 10],
+									"uvUp": [64, 43, 48, 33],
+									"uvDown": [48, 14, 50, 16]
+								}
+							],
+							"submodels": [
+								{
+									"id": "Lock1",
+									"invertAxis": "xy",
+									"translate": [-10, -9, -8],
+									"boxes": [
+										{
+											"coordinates": [2, 7, -7, 2, 3, 1],
+											"uvNorth": [0, 6, 2, 9],
+											"uvEast": [2, 6, 3, 9],
+											"uvSouth": [3.5, 6, 5.5, 9],
+											"uvWest": [5.5, 6, 6.5, 9],
+											"uvUp": [0, 5, 2, 6],
+											"uvDown": [0, 9, 2, 10]
+										}
+									]
+								},
+								{
+									"id": "Lock2",
+									"invertAxis": "xy",
+									"translate": [-12, -9, -8],
+									"boxes": [
+										{
+											"coordinates": [1, 7, -7, 2, 3, 1],
+											"uvNorth": [7, 1, 9, 4],
+											"uvEast": [9, 1, 10, 4],
+											"uvSouth": [10.5, 1, 12.5, 4],
+											"uvWest": [6, 1, 7, 4],
+											"uvUp": [7, 0, 9, 1],
+											"uvDown": [7, 4, 9, 5]
+										}
+									]
+								},
+								{
+									"id": "Lock3",
+									"invertAxis": "xy",
+									"translate": [-12.4, -9, -8],
+									"boxes": [
+										{
+											"coordinates": [-1.6, 7, -7, 2, 3, 1],
+											"uvNorth": [0, 1, 2, 4],
+											"uvEast": [2, 1, 3, 4],
+											"uvSouth": [3.5, 1, 5.5, 4],
+											"uvWest": [5.5, 1, 6.5, 4],
+											"uvUp": [0, 0, 2, 1],
+											"uvDown": [0, 4, 2, 5]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"animations": [
+				{
+					"LidModel.rx": "easeout(clamp(2.3*lid.rx+3, -1, 0), 0, 1.5)",
+					"Lock3.ty": "easeinoutbounce(clamp(2*knob.rx, -1, 0), 9, 9.19)",
+					"Lock2.ty": "easeinoutbounce(clamp(2*knob.rx+1.6, -1, 0), 9, 9.19)",
+					"Lock1.ty": "easeinoutbounce(clamp(2*knob.rx+2.1, -1, 0), 9, 9.19)"
+				}
+			]
+		},
+		{
+			"part": "lid",
+			"id": "lid",
+			"invertAxis": "xy",
+			"translate": [0, -15, -1]
+		},
+		{
+			"part": "knob",
+			"id": "knob",
+			"invertAxis": "xy",
+			"translate": [0, -15, -1]
+		}
+	]
+}
