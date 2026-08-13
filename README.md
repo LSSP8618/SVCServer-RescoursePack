@@ -31,7 +31,7 @@ flowchart LR
 
 ### Dungeons独有
 - [X] HUD实现Dungeons风格
-- [ ] 方块材质覆盖Dungeons样式
+- [X] 方块材质覆盖Dungeons样式
 
 
  
