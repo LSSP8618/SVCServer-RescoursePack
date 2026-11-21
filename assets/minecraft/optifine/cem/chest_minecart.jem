@@ -1,0 +1,143 @@
+{
+  "models": [
+    {
+      "invertAxis": "xy",
+      "part": "bottom",
+      "id": "bottom",
+      "attach": false,
+      "translate": [
+        0.0,
+        -20.0,
+        0.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            10
+          ],
+          "coordinates": [
+            -10.0,
+            12.0,
+            -1.0,
+            20.0,
+            16.0,
+            2.0
+          ]
+        }
+      ]
+    },
+    {
+      "invertAxis": "xy",
+      "part": "left",
+      "id": "left",
+      "attach": false,
+      "translate": [
+        0.0,
+        -20.0,
+        7.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "coordinates": [
+            -8.0,
+            21.0,
+            -8.0,
+            16.0,
+            8.0,
+            2.0
+          ]
+        }
+      ]
+    },
+    {
+      "invertAxis": "xy",
+      "part": "back",
+      "id": "back",
+      "attach": false,
+      "translate": [
+        9.0,
+        -20.0,
+        0.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "coordinates": [
+            -17.0,
+            21.0,
+            -1.0,
+            16.0,
+            8.0,
+            2.0
+          ]
+        }
+      ]
+    },
+    {
+      "invertAxis": "xy",
+      "part": "right",
+      "id": "right",
+      "attach": false,
+      "translate": [
+        0.0,
+        -20.0,
+        -7.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "coordinates": [
+            -8.0,
+            21.0,
+            6.0,
+            16.0,
+            8.0,
+            2.0
+          ]
+        }
+      ]
+    },
+    {
+      "invertAxis": "xy",
+      "part": "front",
+      "id": "front",
+      "attach": false,
+      "translate": [
+        -9.0,
+        -20.0,
+        0.0
+      ],
+      "boxes": [
+        {
+          "textureOffset": [
+            0,
+            0
+          ],
+          "coordinates": [
+            1.0,
+            21.0,
+            -1.0,
+            16.0,
+            8.0,
+            2.0
+          ]
+        }
+      ]
+    }
+  ],
+  "textureSize": [
+    64,
+    32
+  ]
+}

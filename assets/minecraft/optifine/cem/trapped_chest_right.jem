@@ -1,0 +1,100 @@
+{
+	"credit": "Made with Blockbench",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "base",
+			"id": "base",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"submodels": [
+				{
+					"id": "Model",
+					"invertAxis": "xy",
+					"translate": [0, 26, 1],
+					"boxes": [
+						{
+							"coordinates": [-16, -10, 1, 12, 8, 11.2],
+							"uvNorth": [14, 33, 29, 43],
+							"uvEast": [0, 33, 14, 43],
+							"uvSouth": [43, 33, 58, 43],
+							"uvWest": [29, 33, 40, 41],
+							"uvUp": [29, 33, 14, 19],
+							"uvDown": [44, 19, 29, 33]
+						},
+						{
+							"coordinates": [-4.8, -10, 1.8, -11.2, 7.2, 9.6],
+							"uvNorth": [14, 55, 0, 64],
+							"uvEast": [64, 0, 64, 0],
+							"uvSouth": [40, 55, 26, 64],
+							"uvWest": [14, 55, 26, 64],
+							"uvUp": [44, 22, 47, 19],
+							"uvDown": [30, 20, 44, 32]
+						}
+					],
+					"submodels": [
+						{
+							"id": "lidModel",
+							"invertAxis": "xy",
+							"translate": [-4, -10, 1],
+							"boxes": [
+								{
+									"coordinates": [-12, -4, 0, 12, 4, 11.2],
+									"uvNorth": [14, 14, 29, 19],
+									"uvEast": [0, 14, 14, 19],
+									"uvSouth": [43, 14, 58, 19],
+									"uvWest": [29, 14, 43, 19],
+									"uvUp": [29, 14, 14, 0],
+									"uvDown": [44, 0, 29, 14]
+								},
+								{
+									"coordinates": [-0.8, -1.6, 0.8, -11.2, 1.6, 9.6],
+									"uvNorth": [15, 52, 1, 50],
+									"uvEast": [64, 0, 64, 0],
+									"uvSouth": [41, 52, 27, 50],
+									"uvWest": [15, 52, 27, 50],
+									"uvUp": [15, 13, 29, 1],
+									"uvDown": [44, 0, 47, 3]
+								}
+							],
+							"submodels": [
+								{
+									"id": "knobModel",
+									"invertAxis": "xy",
+									"translate": [4, 10, -1],
+									"boxes": [
+										{
+											"coordinates": [-16, -11.6, 12.2, 1.6, 3.2, 0.8],
+											"uvNorth": [8, 1, 4, 9],
+											"uvEast": [8, 0, 9, 4],
+											"uvSouth": [4, 1, 8, 9],
+											"uvUp": [8, 1, 4, 0],
+											"uvDown": [4, 0, 0, 1]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"animations": [
+				{
+					"lidModel.rx": "lid.rx"
+				}
+			]
+		},
+		{
+			"part": "lid",
+			"id": "lid",
+			"invertAxis": "xy",
+			"translate": [0, -15, -1]
+		},
+		{
+			"part": "knob",
+			"id": "knob",
+			"invertAxis": "xy",
+			"translate": [0, -15, -1]
+		}
+	]
+}

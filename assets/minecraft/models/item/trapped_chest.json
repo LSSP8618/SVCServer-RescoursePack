@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/template_dungeons_chest",
+  "textures": {
+    "particle": "minecraft:item/trapped_chest",
+    "texture": "minecraft:item/trapped_chest"
+  }
+}
